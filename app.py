@@ -68,9 +68,9 @@ def main():
     st.title(APP_TITLE)
     IS = pd.read_excel("./Bricks_IS.xlsx", sheet_name="IS")
     placeholder = st.empty()
-    placeholder.header('Choose IS Name')
+    placeholder.header('Choose Inside Seller Name')
     
-    uploaded_name = st.selectbox("IS Name", IS.sort_values(by = 'IS', ignore_index=True)['IS'].to_list(), index=None, placeholder="Choose your Name...")
+    uploaded_name = st.selectbox("Inside Seller Name", IS.sort_values(by = 'IS', ignore_index=True)['IS'].to_list(), index=None, placeholder="Choose your Name...")
     if uploaded_name is None:
         st.stop()
     else:
@@ -161,4 +161,5 @@ def main():
                                 mime='application/vnd.ms-excel')
 
 if __name__ == "__main__":
+
     main()
