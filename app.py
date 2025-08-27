@@ -47,7 +47,6 @@ def get_data(IS_name):
     Bricks['Brick Code'] = Bricks['Brick Code'].astype('int64')
     All_Accounts = All_Accounts.merge(Bricks[['Brick Code','IS']], on = 'Brick Code', how = 'left')
     All_Accounts = All_Accounts[All_Accounts['IS'] == IS_name]
-    Bricks['Brick Code'] = Bricks['Brick Code'].astype('str')
 
     All_Accounts = All_Accounts.merge(visits_count[['Account ID','# Calls']], on = 'Account ID', how = 'left') 
     All_Accounts['# Calls'] = All_Accounts['# Calls'].fillna(0)
@@ -138,6 +137,7 @@ def main():
                      &(df['IS Target'] >= target[0])
                      &(df['IS Target'] <= target[1])]
     df_filtered['Coverage'] = df_filtered['Coverage'] * 100
+    df_filtered['Brick Code'] = df_filtered['Brick Code'].astype('str')
     df_filtered = df_filtered[['Account ID', 'Account Owner', 'IS', 'Account Name', 'Account Segment', 
                                'Channel', 'IS Target', '# Calls', 'Last Call', 'Call Rate', 'Coverage', 'Called',
                                 'Account Status', 'Call Status (Account)', 'Brick Code',
@@ -163,3 +163,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
