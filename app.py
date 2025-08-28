@@ -140,7 +140,7 @@ def main():
     df_filtered['Brick Code'] = df_filtered['Brick Code'].astype('str')
     df_filtered = df_filtered[['Account ID', 'Account Owner', 'IS', 'Account Name', 'Account Segment', 
                                'Channel', 'IS Target', '# Calls', 'Last Call', 'Call Rate', 'Coverage', 'Called',
-                                'Account Status', 'Call Status (Account)', 'Brick Code',
+                                'Main Phone', 'Main Fax', 'Email', 'Account Status', 'Call Status (Account)', 'Brick Code',
                                 'Brick Description', 'Primary State/Province', 'Primary City', 'Primary Street']]
     
     st.dataframe(df_filtered,
@@ -163,4 +163,5 @@ def main():
 if __name__ == "__main__":
 
     main()
+
 
