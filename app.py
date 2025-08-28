@@ -11,7 +11,7 @@ from PIL import Image
 from PIL import ImageDraw
 
 
-APP_TITLE = "GERMANY IS ACCOUNTS"
+APP_TITLE = "GERMANY INSIDE SALES ACCOUNTS"
 
 @st.cache_data(show_spinner="Downloading accounts from SFDC...")
 def get_data(IS_name):
@@ -230,3 +230,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
